@@ -8,17 +8,30 @@ export const NPCCard = props => {
     //for each key in the object
     // map over and return the values with their properties in p tags
     return Object.keys(attributes).map(attr => {
-      return <p key={attr}>{attr}: {attributes[attr]}</p>
+      if (attr === 'firstName' 
+        || attr === 'lastName'
+        || attr === 'race') {
+        return null;
+      }
+
+      return (
+        <h5 key={attr} className="ui header npcHeader">
+          {attr}
+          <div className="sub header">{attributes[attr]}</div>
+        </h5>
+      );
     });
   };
 
   return (
     <div className="ui card column">
       <div className="content">
-        <div className="header">{name}</div>
+        <div className="header">
+          {details.firstName + ' ' + details.lastName}
+        </div>
       </div>
       <div className="content">
-        <h4 className="ui sub header">{race}</h4>
+        <h4 className="ui large sub header npcName">{details.race}</h4>
         <div className="ui small feed">
           <div className="event">
             <div className="content">
@@ -35,8 +48,6 @@ export const NPCCard = props => {
 }
 
 NPCCard.propTypes = {
-  header: PropTypes.string,
-  subheader: PropTypes.string,
   details: PropTypes.object,
 };
 

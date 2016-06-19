@@ -8,6 +8,8 @@ import { bindActionCreators } from 'redux';
 import NPCCard from '../components/NPCCard.jsx';
 import Header from '../components/Header.jsx';
 
+import { createCharacter } from '../utils/npcFunction';
+
 //*************************************************
 //        C O M P O N E N T
 //*************************************************
@@ -18,11 +20,7 @@ export class NPC extends Component {
 
 
   render() {
-    const content = {
-      strength: 'dexterity',
-      Weakness: 'constitution',
-      trait: 'long nails',
-    }
+    const content = createCharacter();
 
     return (
         <div className="ui grid npcContainer">
@@ -34,8 +32,6 @@ export class NPC extends Component {
           />
           <section className="sixteen wide column card__container">
             <NPCCard
-              name="Fealor Dwendle"
-              race="Orc"
               details={content}
             />
           </section>

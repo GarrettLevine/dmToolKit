@@ -1,2 +1,10 @@
 .appContentContainer {
   margin-top: 30px; }
+
+.npcName {
+  text-transform: uppercase !important;
+  letter-spacing: 1px; }
+
+.npcHeader:not(.npcHeader > div) {
+  text-transform: uppercase !important;
+  letter-spacing: 1px; }
