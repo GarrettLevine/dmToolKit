@@ -20,7 +20,9 @@ export class NPC extends Component {
 
 
   render() {
-    const content = createCharacter();
+    function createNPC() {
+      return createCharacter();
+    }
 
     return (
         <div className="ui grid npcContainer">
@@ -30,9 +32,15 @@ export class NPC extends Component {
             subheader="Roll some quick NPCs with the click of a button"
             icon="child"
           />
-          <section className="sixteen wide column card__container">
+          <section className="ui grid sixteen wide column card__container">
             <NPCCard
-              details={content}
+              createNPC={createNPC}
+            />
+             <NPCCard
+              createNPC={createNPC}
+            />
+            <NPCCard
+              createNPC={createNPC}
             />
           </section>
         </div>

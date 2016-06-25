@@ -1,16 +1,15 @@
 import React, { PropTypes } from 'react';
 
 export const NPCCard = props => {
-  const { name, race, details } = props;
+  const { createNPC } = props;
 
+  const details = createNPC();
 
   const renderDetails = (attributes) => {
     //for each key in the object
     // map over and return the values with their properties in p tags
     return Object.keys(attributes).map(attr => {
-      if (attr === 'firstName' 
-        || attr === 'lastName'
-        || attr === 'race') {
+      if (attr === 'firstName' || attr === 'lastName' || attr === 'race') {
         return null;
       }
 
@@ -24,14 +23,14 @@ export const NPCCard = props => {
   };
 
   return (
-    <div className="ui card column">
-      <div className="content">
-        <div className="header">
+    <div className="ui card floated left four wide column NPCCard">
+      <div className="content ui column">
+        <div className="header floated left npcNameHeader">
           {details.firstName + ' ' + details.lastName}
         </div>
+        <h5 className="ui large sub header npcName">{details.race}</h5>
       </div>
       <div className="content">
-        <h4 className="ui large sub header npcName">{details.race}</h4>
         <div className="ui small feed">
           <div className="event">
             <div className="content">
@@ -41,14 +40,19 @@ export const NPCCard = props => {
         </div>
       </div>
       <div className="extra content">
-        <button className="ui green button right floated">Save Character</button>
+        <button className="ui icon tiny green button right floated">
+          <i className="plus tiny icon"> </i>
+        </button>
+        <button className="ui icon tiny red button right floated">
+          <i className="icon tiny remove"> </i>
+        </button>
       </div>
     </div>
   );
 }
 
 NPCCard.propTypes = {
-  details: PropTypes.object,
+  createNPC: PropTypes.func,
 };
 
 export default NPCCard;
