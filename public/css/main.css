@@ -1,6 +1,11 @@
 .appContentContainer {
   margin-top: 30px; }
 
+.loginContainer {
+  position: absolute;
+  top: 16px;
+  right: 16px; }
+
 .npcName {
   text-transform: uppercase !important;
   letter-spacing: 1px;
@@ -10,6 +15,7 @@
 .npcHeader {
   text-transform: uppercase !important;
   font-size: 11px !important;
+  margin: 14px 0 !important;
   letter-spacing: 2px; }
 
 .NPCCard {

@@ -1,7 +1,21 @@
+//************************************************************************
+//									A P P    C O N T A I N E R 
+//************************************************************************
+
 .appContentContainer {
 	margin-top: 30px;
 }
-
+//************************************************************************
+//									L O G I N    C O N T A I N E R
+//************************************************************************
+.loginContainer {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+}
+//************************************************************************
+//									N P C    C A R D S 
+//************************************************************************
 .npcName {
 	text-transform: uppercase !important;
 	letter-spacing: 1px;
@@ -12,6 +26,7 @@
 .npcHeader {
 	text-transform: uppercase !important;
 	font-size: 11px !important;
+	margin: 14px 0 !important;
 	letter-spacing: 2px;
 }
 

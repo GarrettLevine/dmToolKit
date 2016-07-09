@@ -1,12 +1,17 @@
 import React, { PropTypes } from 'react';
+
 import NavButton from './NavButton.jsx';
+import Button from './Button.jsx';
+import Login from '../containers/Login.jsx';
+
+import { loginModal } from '../utils/SUIFunctions';
 
 export const App = (props) => {
     const { children } = props;
 
     return (
       <div className="ui grid contentContainer">
-        <div className="ui visible left demo vertical inverted sidebar labeled icon menu">
+        <section className="ui visible left demo vertical inverted sidebar labeled icon menu">
           <NavButton
             route="/"
             classes="item"
@@ -27,10 +32,19 @@ export const App = (props) => {
             <i className="fa fa-shield icon"></i>
               Encounters
           </a>
-        </div>
+        </section>
+        <section className="loginContainer">
+          <Button
+            text='Login'
+            classes='big green'
+            onClick={loginModal}
+          />
+          <Login />
+        </section>
         <section className="fourteen wide column right floated appContentContainer">
           {children}
         </section>
+
       </div>
     );
 }
