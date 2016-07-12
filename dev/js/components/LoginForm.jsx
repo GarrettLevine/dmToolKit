@@ -5,7 +5,7 @@ import React, { PropTypes, Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { 
+import {
   updateLoginEmail,
   updateLoginPassword
 } from '../actions/userAuth-actions';
@@ -26,24 +26,23 @@ export class LoginForm extends Component {
         id="loginForm"
         className="ui form"
       >
-        <Input 
+        <Input
           type="text"
           text="E-mail"
           name="email"
           classes="loginForm__email"
           value={this.props.login.email}
-          onChange={this.props.updateLoginEmail}
+          funky={this.props.updateLoginEmail}
         />
         <Input
           type="password"
           text="Password"
           name="password"
+          funky={this.props.updateLoginPassword}
           classes="loginForm__password"
-          value={this.props.login.password}
-          onChange={this.props.updateLoginPassword}
         />
         <input type="submit" className="ui button green" value="Sign In" />
-      </form> 
+      </form>
     );
   }
 }
