@@ -22,13 +22,19 @@ export default function userAuth(state = initialState, action) {
 	switch (action.type) {
 		case types.UPDATE_LOGIN_EMAIL: {
 			return Object.assign({}, state, {
-			  login: { email: action.payload},
+			  login: { 
+			  	email: action.payload,
+			  	password: state.login.password,
+			  },
 			});
 		}
 
 		case types.UPDATE_LOGIN_PASSWORD: {
 			return Object.assign({}, state, {
-			  login: { password: action.payload},
+			  login: {
+			  	email: state.login.email,
+			  	password: action.payload,
+			  },
 			});
 		}
 

@@ -5,7 +5,7 @@ export const NPCCard = props => {
 
   const details = createNPC();
 
-  const renderDetails = (attributes) => {
+  const renderDetails = attributes => {
     //for each key in the object
     // map over and return the values with their properties in p tags
     return Object.keys(attributes).map(attr => {
@@ -41,10 +41,10 @@ export const NPCCard = props => {
       </div>
       <div className="extra content">
         <button className="ui icon tiny green button right floated">
-          <i className="plus tiny icon"> </i>
+          <i className="plus icon"> </i>
         </button>
         <button className="ui icon tiny red button right floated">
-          <i className="icon tiny remove"> </i>
+          <i className="icon remove"> </i>
         </button>
       </div>
     </div>
