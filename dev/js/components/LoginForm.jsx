@@ -39,7 +39,7 @@ export class LoginForm extends Component {
           name="email"
           classes="loginForm__email"
           value={this.props.login.email}
-          onChange={this.props.updateLoginEmail}
+          change={this.props.updateLoginEmail}
         />
         <Input
           type="password"
@@ -47,7 +47,7 @@ export class LoginForm extends Component {
           name="password"
           classes="loginForm__password"
           value={this.props.login.password}
-          onChange={this.props.updateLoginPassword}
+          change={this.props.updateLoginPassword}
         />
         <input type="submit" className="ui button green" value="Sign In" />
       </form> 
