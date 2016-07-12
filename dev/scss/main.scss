@@ -1,9 +1,13 @@
 //************************************************************************
 //									A P P    C O N T A I N E R 
 //************************************************************************
-
 .appContentContainer {
 	margin-top: 30px;
+}
+
+.contentContainer__sidebar {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 //************************************************************************
 //									L O G I N    C O N T A I N E R
@@ -12,6 +16,7 @@
 	position: absolute;
 	top: 16px;
 	right: 16px;
+	z-index: 100;
 }
 //************************************************************************
 //									N P C    C A R D S 

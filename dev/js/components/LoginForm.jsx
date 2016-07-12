@@ -11,6 +11,7 @@ import {
 } from '../actions/userAuth-actions';
 
 import Input from './Input.jsx';
+import Header from './Header.jsx';
 
 //***************************************************
 //  C O M P O N E N T
@@ -26,6 +27,12 @@ export class LoginForm extends Component {
         id="loginForm"
         className="ui form"
       >
+        <Header
+          header="Login"
+          subheader="Login and resume planning your adventure."
+          icon="user"
+          classes=""
+        />
         <Input 
           type="text"
           text="E-mail"

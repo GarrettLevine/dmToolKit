@@ -15,7 +15,7 @@ export const App = (props) => {
 
     return (
       <div className="ui grid contentContainer">
-        <section className="ui visible left demo vertical inverted sidebar labeled icon menu">
+        <section className="contentContainer__sidebar ui visible left demo vertical inverted sidebar labeled icon menu">
           <NavButton
             route="/"
             classes="item"
