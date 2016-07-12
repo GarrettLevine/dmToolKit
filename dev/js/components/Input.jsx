@@ -7,10 +7,10 @@ import React, { PropTypes } from 'react';
 //  C O M P O N E N T
 //***************************************************
 export const Input = props => {
-  const { type, text, name, classes, funky, value } = props;
+  const { type, text, name, classes, onChange, value } = props;
 
   function handleChange(e) {
-    funky(e.target.value);
+    onChange(e.target.value);
   }
 
   return (
@@ -33,7 +33,7 @@ Input.propTypes = {
   name: PropTypes.string,
   text: PropTypes.string,
   classes: PropTypes.string,
-  funky: PropTypes.func,
+  onChange: PropTypes.func,
 };
 
 //************************************************************************

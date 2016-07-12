@@ -20,31 +20,22 @@ export class NPC extends Component {
 
 
   render() {
-    const npcCardCount = 3;
-
     function createNPC() {
       return createCharacter();
-    }
-
-    function renderCards() {
-      for(var i = 1; i <= npcCardCount; i++) {
-        console.log(i);
-        <NPCCard
-          createNPC={createNPC}
-        />
-      }
     }
 
     return (
         <div className="ui grid npcContainer">
           <Header
-            classes="sixteen wide column"
+            classes="twelve wide column"
             header="NPC Generator"
             subheader="Roll some quick NPCs with the click of a button"
             icon="child"
           />
           <section className="ui grid sixteen wide column card__container">
-            {renderCards()}
+            <NPCCard createNPC={createNPC} />
+            <NPCCard createNPC={createNPC} />
+            <NPCCard createNPC={createNPC} />
           </section>
         </div>
     )
