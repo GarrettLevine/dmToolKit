@@ -10,7 +10,8 @@ export const App = (props) => {
     const { children } = props;
 
     function userModalHandler() {
-      modalToggle('.userAuth Button', '.userAuth__container');
+      $('.userAuth__container')
+        .modal('show');
     }
 
     return (
@@ -29,18 +30,18 @@ export const App = (props) => {
             text="NPCs"
           />
           <a className="disabled item">
-            <i className="book icon"></i>
+            <i className="disabled book icon"></i>
               Story
           </a>
           <a className="disabled item">
-            <i className="fa fa-shield icon"></i>
+            <i className="disabled fa fa-shield icon"></i>
               Encounters
           </a>
         </section>
         <section className="userAuth">
           <Button
             text='Login'
-            classes='big green'
+            classes='userAuth__button big green'
             onClick={userModalHandler}
           />
           <UserAuth />
