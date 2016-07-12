@@ -3,23 +3,25 @@
 //************************************************************************
 import React, { PropTypes } from 'react';
 
-//************************************************************************
-//  C O M P O N E N T    I M P O R T S
-//************************************************************************
-
 //***************************************************
 //  C O M P O N E N T
 //***************************************************
 export const Input = props => {
-  const { type, text, name, classes } = props;
+  const { type, text, name, classes, onChange, value } = props;
+
+  function handleChange(e) {
+    onChange(e.target.value);
+  }
 
   return (
-    <div className="field">
+    <div className={classes + ' field'}>
      <label htmlFor={name}>{text}</label>
       <input
         type={type}
         id={name}
         name={name}
+        onChange={handleChange} 
+        value={value}
         placeholder={text}
       />
     </div>
@@ -31,6 +33,7 @@ Input.propTypes = {
   name: PropTypes.string,
   text: PropTypes.string,
   classes: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 //************************************************************************

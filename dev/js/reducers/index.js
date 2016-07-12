@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 
+import npc from './npc-reducer';
+import userAuth from './userAuth-reducer';
+
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  userAuth,
+  npc,
 });
 
 export default rootReducer;

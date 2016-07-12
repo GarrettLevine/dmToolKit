@@ -13,14 +13,14 @@ import LoginForm from '../components/LoginForm.jsx';
 //***************************************************
 //                C O M P O N E N T
 //***************************************************
-export class Login extends Component  {
+export class UserAuth extends Component  {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className="loginForm ui modal">
+      <div className="userAuth__container ui modal">
         <i className="close icon red"></i>
         <div className="content">
           <LoginForm />
@@ -30,7 +30,14 @@ export class Login extends Component  {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    login: state.userAuth.login,
+    signup: state.userAuth.signUp,
+  };
+}
+
 //************************************************************************
 //                 C O M P O N E N T   E X P O R T
 //************************************************************************
-export default Login;
+export default connect(mapStateToProps)(UserAuth);

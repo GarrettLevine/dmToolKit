@@ -2,12 +2,16 @@ import React, { PropTypes } from 'react';
 
 import NavButton from './NavButton.jsx';
 import Button from './Button.jsx';
-import Login from '../containers/Login.jsx';
+import UserAuth from '../containers/UserAuth.jsx';
 
-import { loginModal } from '../utils/SUIFunctions';
+import { modalToggle } from '../utils/SUIFunctions';
 
 export const App = (props) => {
     const { children } = props;
+
+    function userModalHandler() {
+      modalToggle('.userAuth Button', '.userAuth__container');
+    }
 
     return (
       <div className="ui grid contentContainer">
@@ -33,13 +37,13 @@ export const App = (props) => {
               Encounters
           </a>
         </section>
-        <section className="loginContainer">
+        <section className="userAuth">
           <Button
             text='Login'
             classes='big green'
-            onClick={loginModal}
+            onClick={userModalHandler}
           />
-          <Login />
+          <UserAuth />
         </section>
         <section className="fourteen wide column right floated appContentContainer">
           {children}

@@ -1,37 +1,70 @@
 //************************************************************************
 //  M O D U L E     I M P O R T S
 //************************************************************************
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-//************************************************************************
-//  C O M P O N E N T    I M P O R T S
-//************************************************************************
+import { 
+  updateLoginEmail,
+  updateLoginPassword
+} from '../actions/userAuth-actions';
+
 import Input from './Input.jsx';
+
 //***************************************************
 //  C O M P O N E N T
 //***************************************************
-export const LoginForm = props => {
-  return (
-    <form className="ui form">
-      <Input
-        type="text"
-        text="E-mail"
-        name="email"
-        classes="big"
-      />
-      <Input
-        type="password"
-        text="Password"
-        name="password"
-        classes="big"
-      />
+export class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-      <input type="submit" className="ui button green" value="Sign In" />
-    </form> 
-  );
+  render() {
+    return (
+      <form
+        id="loginForm"
+        className="ui form"
+      >
+        <Input 
+          type="text"
+          text="E-mail"
+          name="email"
+          classes="loginForm__email"
+          value={this.props.login.email}
+          onChange={this.props.updateLoginEmail}
+        />
+        <Input
+          type="password"
+          text="Password"
+          name="password"
+          classes="loginForm__password"
+          value={this.props.login.password}
+          onChange={this.props.updateLoginPassword}
+        />
+        <input type="submit" className="ui button green" value="Sign In" />
+      </form> 
+    );
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    login: state.userAuth.login
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    updateLoginEmail,
+    updateLoginPassword,
+  }, dispatch);
 }
 
 //************************************************************************
 //  C O M P O N E N T   E X P O R T
 //************************************************************************
-export default LoginForm;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);
