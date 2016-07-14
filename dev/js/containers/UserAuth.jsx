@@ -18,6 +18,10 @@ export class UserAuth extends Component  {
     super(props);
   }
 
+  componentDidMount() {
+    $('.ui.modal').modal({detachable: false});
+  }
+
   render() {
     return (
       <div className="userAuth__container ui modal">

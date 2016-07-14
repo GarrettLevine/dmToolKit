@@ -5,6 +5,9 @@
   padding-left: 0 !important;
   padding-right: 0 !important; }
 
+.ui.dimmer.modals {
+  z-index: 199 !important; }
+
 .userAuth {
   position: absolute;
   top: 16px;
