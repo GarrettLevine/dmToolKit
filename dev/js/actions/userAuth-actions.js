@@ -40,3 +40,10 @@ export function updateConfirmPasswrod(email) {
   };
 }
 
+//show user create form
+export function toggleCreateUser() {
+  return {
+    type: types.TOGGLE_CREATE_USER,
+  };
+}
+

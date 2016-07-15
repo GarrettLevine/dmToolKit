@@ -13,6 +13,12 @@
   top: 16px;
   right: 56px;
   z-index: 200; }
+  .userAuth .close {
+    top: 0.5rem !important;
+    right: 0.5rem !important; }
+
+#loginForm {
+  padding: 2rem; }
 
 .npcName {
   text-transform: uppercase !important;

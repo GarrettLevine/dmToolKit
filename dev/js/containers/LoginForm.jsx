@@ -10,8 +10,8 @@ import {
   updateLoginPassword
 } from '../actions/userAuth-actions';
 
-import Input from './Input.jsx';
-import Header from './Header.jsx';
+import Input from '../components/Input.jsx';
+import Header from '../components/Header.jsx';
 
 //***************************************************
 //  C O M P O N E N T

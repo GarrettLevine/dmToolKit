@@ -7,6 +7,7 @@
 //    R E D U C E R S
 //*************************************************
 const initialState = {
+  createUser: false,
   login: {
     email: '',
     password: '',
@@ -65,6 +66,12 @@ export default function userAuth(state = initialState, action) {
           password: state.signUp.password,
           confirmPass: action.payload,
         },
+      });
+    }
+
+    case types.TOGGLE_CREATE_USER: {
+      return Object.assign({}, state, {
+        createUser: !state.createUser,
       });
     }
 
