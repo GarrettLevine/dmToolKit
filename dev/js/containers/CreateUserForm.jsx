@@ -25,12 +25,12 @@ export class CreateUserForm extends Component {
   render() {
     return (
       <form
-        id="loginForm"
+        id="createUserForm"
         className="ui form"
       >
         <Header
-          header="Login"
-          subheader="Login and resume planning your adventure."
+          header="Sign Up"
+          subheader="Sign up to start planning an adventure!"
           icon="user"
           classes=""
         />
@@ -41,6 +41,7 @@ export class CreateUserForm extends Component {
           classes="createUserForm__email"
           value={this.props.signUp.email}
           onChange={this.props.updateCreateEmail}
+          isRequired
         />
         <Input
           type="password"
@@ -49,14 +50,16 @@ export class CreateUserForm extends Component {
           classes="createUserForm__password"
           value={this.props.signUp.password}
           onChange={this.props.updateCreatePassword}
+          isRequired
         />
         <Input
           type="password"
           text="Confirm Password"
           name="confirmPassword"
           classes="createUserForm__confirmPassword"
-          value={this.props.signUp.confirmPassword}
+          value={this.props.signUp.confirmPass}
           onChange={this.props.updateConfirmPassword}
+          isRequired
         />
         <input type="submit" className="ui button green" value="Create Account" />
       </form>

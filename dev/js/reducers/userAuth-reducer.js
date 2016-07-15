@@ -42,7 +42,7 @@ export default function userAuth(state = initialState, action) {
     case types.UPDATE_CREATE_EMAIL: {
       return Object.assign({}, state, {
         signUp: {
-          emai: action.payload,
+          email: action.payload,
           password: state.signUp.password,
           confirmPass: state.signUp.password,
         },
@@ -52,17 +52,17 @@ export default function userAuth(state = initialState, action) {
     case types.UPDATE_CREATE_PASSWORD: {
       return Object.assign({}, state, {
         signUp: {
-          emai: state.signUp.email,
+          email: state.signUp.email,
           password: action.payload,
-          confirmPass: state.signUp.password,
+          confirmPass: state.signUp.confirmPass,
         },
       });
     }
 
-    case types.UPDATE_CREATE_PASSWORD: {
+    case types.UPDATE_CONFIRM_PASSWORD: {
       return Object.assign({}, state, {
         signUp: {
-          emai: state.signUp.email,
+          email: state.signUp.email,
           password: state.signUp.password,
           confirmPass: action.payload,
         },

@@ -34,7 +34,6 @@ export class UserAuth extends Component  {
   }
 
   render() {
-    console.log(this.props.createUser);
     return (
       <div className="userAuth__container ui modal">
         <i className="close icon red"></i>
