@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 
+console.log(firebase);
 // Initialize Firebase
 var config = {
  apiKey: "AIzaSyBOMPPiPG9n7hqSw316PNM_JlGwzrCTkLE",
@@ -8,11 +9,11 @@ var config = {
  storageBucket: "dmtoolkit-a0ab9.appspot.com",
 };
 
-firebase.initializeApp(config);
+var app = firebase.initializeApp(config);
 
 //CREATE NEW USER
 export function createUser(email, password) {
-  firebase.auth()
+  app.auth()
     .createUserWithEmailAndPassword(email, password)
     .catch( (error) => {
     // Handle Errors here.
@@ -24,7 +25,7 @@ export function createUser(email, password) {
 
 //SIGN IN USER
 export function signInUser(email, password) {
-  firebase.auth()
+  app.auth()
     .signInWithEmailAndPassword(email, password)
     .catch( (error) => {
     // Handle Errors here.
