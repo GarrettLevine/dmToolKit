@@ -38,15 +38,15 @@ export const App = (props) => {
               Encounters
           </a>
         </section>
-        <section className="userAuth">
-          <Button
-            text='Login'
-            classes='userAuth__button big green'
-            onClick={userModalHandler}
-          />
-          <UserAuth />
-        </section>
         <section className="fourteen wide column right floated appContentContainer">
+          <section className="userAuth">
+            <Button
+              text='Login'
+              classes='userAuth__button big green'
+              onClick={userModalHandler}
+            />
+            <UserAuth />
+          </section>
           {children}
         </section>
 

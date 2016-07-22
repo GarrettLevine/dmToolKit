@@ -7,7 +7,7 @@ import React, { PropTypes } from 'react';
 //  C O M P O N E N T
 //***************************************************
 export const Input = props => {
-  const { type, text, name, classes, onChange, value } = props;
+  const { type, text, name, classes, onChange, value, isRequired } = props;
 
   function handleChange(e) {
     onChange(e.target.value);
@@ -23,6 +23,7 @@ export const Input = props => {
         onChange={handleChange}
         value={value}
         placeholder={text}
+        required={isRequired}
       />
     </div>
   );
@@ -34,6 +35,7 @@ Input.propTypes = {
   text: PropTypes.string,
   classes: PropTypes.string,
   onChange: PropTypes.func,
+  isRequired: PropTypes.bool,
 };
 
 //************************************************************************

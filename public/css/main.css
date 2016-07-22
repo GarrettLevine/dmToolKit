@@ -5,11 +5,21 @@
   padding-left: 0 !important;
   padding-right: 0 !important; }
 
+.ui.dimmer.modals {
+  z-index: 199 !important; }
+
 .userAuth {
   position: absolute;
   top: 16px;
-  right: 16px;
-  z-index: 100; }
+  right: 56px;
+  z-index: 200; }
+  .userAuth .close {
+    top: 0.5rem !important;
+    right: 0.5rem !important; }
+
+#loginForm,
+#createUserForm {
+  padding: 2rem; }
 
 .npcName {
   text-transform: uppercase !important;

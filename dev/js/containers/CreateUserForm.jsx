@@ -6,17 +6,18 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import {
-  updateLoginEmail,
-  updateLoginPassword
+  updateCreateEmail,
+  updateCreatePassword,
+  updateConfirmPassword,
 } from '../actions/userAuth-actions';
 
-import Input from './Input.jsx';
-import Header from './Header.jsx';
+import Input from '../components/Input.jsx';
+import Header from '../components/Header.jsx';
 
 //***************************************************
 //  C O M P O N E N T
 //***************************************************
-export class LoginForm extends Component {
+export class CreateUserForm extends Component {
   constructor(props) {
     super(props);
   }
@@ -24,12 +25,12 @@ export class LoginForm extends Component {
   render() {
     return (
       <form
-        id="loginForm"
+        id="createUserForm"
         className="ui form"
       >
         <Header
-          header="Login"
-          subheader="Login and resume planning your adventure."
+          header="Sign Up"
+          subheader="Sign up to start planning an adventure!"
           icon="user"
           classes=""
         />
@@ -37,19 +38,30 @@ export class LoginForm extends Component {
           type="text"
           text="E-mail"
           name="email"
-          classes="loginForm__email"
-          value={this.props.login.email}
-          onChange={this.props.updateLoginEmail}
+          classes="createUserForm__email"
+          value={this.props.signUp.email}
+          onChange={this.props.updateCreateEmail}
+          isRequired
         />
         <Input
           type="password"
           text="Password"
           name="password"
-          classes="loginForm__password"
-          value={this.props.login.password}
-          onChange={this.props.updateLoginPassword}
+          classes="createUserForm__password"
+          value={this.props.signUp.password}
+          onChange={this.props.updateCreatePassword}
+          isRequired
         />
-        <input type="submit" className="ui button green" value="Sign In" />
+        <Input
+          type="password"
+          text="Confirm Password"
+          name="confirmPassword"
+          classes="createUserForm__confirmPassword"
+          value={this.props.signUp.confirmPass}
+          onChange={this.props.updateConfirmPassword}
+          isRequired
+        />
+        <input type="submit" className="ui button green" value="Create Account" />
       </form>
     );
   }
@@ -57,14 +69,15 @@ export class LoginForm extends Component {
 
 function mapStateToProps(state) {
   return {
-    login: state.userAuth.login
+    signUp: state.userAuth.signUp
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    updateLoginEmail,
-    updateLoginPassword,
+    updateCreateEmail,
+    updateCreatePassword,
+    updateConfirmPassword,
   }, dispatch);
 }
 
@@ -74,4 +87,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginForm);
+)(CreateUserForm);
