@@ -14,7 +14,7 @@ export const Button = (props) => {
     >
       {text}
     </button>
-  )
+  );
 }
 
 Button.propTypes = {

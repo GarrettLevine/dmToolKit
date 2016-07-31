@@ -4,7 +4,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router'
+import { Router, browserHistory } from 'react-router';
 
 //************************************************************************
 //   C O M P O N E N T   I M P O R T S
