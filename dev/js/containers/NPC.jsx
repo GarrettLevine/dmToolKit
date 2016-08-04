@@ -18,11 +18,26 @@ export class NPC extends Component {
     super(props);
   }
 
+  componentDidUpdate() {
+    console.log('yaaas');
+    const cardCount = 3;
+    
+    function renderCards(n) {
+      if ($('.card__container').length < n) {
+        $('.card__container').append('<NPC createNPC={createNPC}');
+      }
+    }
+
+    renderCards(cardCount);
+  }
 
   render() {
     function createNPC() {
       return createCharacter();
     }
+
+
+
 
     return (
         <div className="ui grid npcContainer">
@@ -32,15 +47,14 @@ export class NPC extends Component {
             subheader="Roll some quick NPCs with the click of a button"
             icon="child"
           />
-          <section className="ui grid sixteen wide column card__container">
-            <NPCCard createNPC={createNPC} />
-            <NPCCard createNPC={createNPC} />
+          <section
+            className="ui grid sixteen wide column card__container"
+          >
             <NPCCard createNPC={createNPC} />
           </section>
         </div>
-    )
+    );
   }
-
 }
 
 //*************************************************

@@ -22,15 +22,19 @@ export const NPCCard = props => {
     });
   };
 
+  const removeCard = function(event) {
+    $(event.target).parents('.NPCCard').remove();
+  };
+
   return (
-    <div className="ui card floated left four wide column NPCCard">
+    <div className="ui card floated left eight wide column NPCCard">
       <div className="content ui column">
         <div className="header floated left npcNameHeader">
           {details.firstName + ' ' + details.lastName}
         </div>
         <h5 className="ui large sub header npcName">{details.race}</h5>
       </div>
-      <div className="content">
+      <div className="content npcCard__column">
         <div className="ui small feed">
           <div className="event">
             <div className="content">
@@ -43,8 +47,11 @@ export const NPCCard = props => {
         <button className="ui icon tiny green button right floated">
           <i className="plus icon"> </i>
         </button>
-        <button className="ui icon tiny red button right floated">
-          <i className="icon remove"> </i>
+        <button
+          className="ui icon tiny red button right floated"
+          onClick={removeCard}
+        >
+          <i className="icon remove"></i>
         </button>
       </div>
     </div>
